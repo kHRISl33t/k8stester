@@ -1,0 +1,23 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: k8stest-sample-app
+  labels:
+    app: k8stester
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: k8stester
+      tier: backend
+  template:
+    metadata:
+      labels:
+        app: k8stester
+        tier: backend
+    spec:
+      containers:
+      - name: k8stester
+        image: khrisl33t/k8stester:v1
+        ports:
+        - containerPort: 3000
