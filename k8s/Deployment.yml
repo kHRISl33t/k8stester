@@ -18,6 +18,6 @@ spec:
     spec:
       containers:
       - name: k8stester
-        image: khrisl33t/k8stester:v1
+        image: khrisl33t/k8stester:v2
         ports:
         - containerPort: 3000
