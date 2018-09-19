@@ -1,4 +1,4 @@
-apiVersion: apps/v1beta1
+apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   name: k8stest-sample-app
@@ -17,7 +17,12 @@ spec:
         tier: backend
     spec:
       containers:
-      - name: k8stester
-        image: khrisl33t/k8stester:v2
+      - env:
+        - name: PORT
+          value: "80"
+        name: k8stester
+        image: khrisl33t/k8stester:v4
         ports:
-        - containerPort: 3000
+        - containerPort: 80
+          protocol: TCP
+        resources: {}
