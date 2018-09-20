@@ -21,7 +21,7 @@ spec:
         - name: PORT
           value: "80"
         name: k8stester
-        image: khrisl33t/k8stester:v4
+        image: khrisl33t/k8stester:v5
         ports:
         - containerPort: 80
           protocol: TCP
